@@ -1,0 +1,19 @@
+<%- include('includes/head'); %>
+<%- include('includes/nav'); %>
+
+<div class="container-fluid">
+    <div class="row flex-nowrap">
+       <%- include('includes/sidenav') %>
+       <div class="col py-3">
+        <h2>Wellcome 
+          <% if(!user.name) {%><%= user.email %>!<% } %>
+          <%= user.name  %>
+          !
+          </h2>
+    </div>
+</div>
+
+<div class="container">
+    
+   
+</div>

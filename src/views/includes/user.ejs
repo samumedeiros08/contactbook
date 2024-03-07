@@ -1,0 +1,8 @@
+<% if (user){ %>
+<div class="container">
+    <p>Wellcome
+        <% if(!user.name) {%><%= user.email %><% } %>
+        <%= user.name  %>
+    </p>
+</div>
+<% } %>

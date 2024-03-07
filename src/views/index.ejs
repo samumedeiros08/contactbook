@@ -1,0 +1,48 @@
+<%- include('includes/head'); %>
+<%- include('includes/nav'); %>
+<%- include('includes/user') %>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-2"></div>
+
+        <div class="col-lg-8">
+          <h1 class="display-2 text-center">Contacts</h1>
+          <p class="text-center lead">Follow contacts </p>
+
+          <div class="responsive-table">
+            <% if(user) {%> 
+            <table class="table">
+              <% if (contacts.length > 0) {%>
+                <% contacts.forEach(contact => { %>
+                <tr>
+                  <td><%= contact.name %></td>
+                  <td><%= contact.surname %></td>
+                  <td><%= contact.phone %></td>
+                  <td><%= contact.email %></td>
+                  <td><a href="/contact/index/<%= contact._id %>" method="POST"><button type="submit" class="btn btn-secondary">Edit</button></a>
+                  </td>
+                  
+                 <% }) %>              
+                <% } else {%>
+                  <p>Click <a href="/contact/index">here</a> to add your contacts</p>
+                  <% } %>
+                
+                
+              </tr>
+
+            </table>
+            <% } else {%> 
+              <h3>Please <a href="/login/index">Login</a> to access contacts!</h3>
+              <% } %>
+          </div>
+
+        </div>
+        
+        <div class="col-lg-2"></div>
+      </div>
+    </div>
+    
+
+<%- include('includes/footer'); %>
